@@ -18,7 +18,7 @@ class CheckLoggedInForLogout
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'Bạn phải đăng nhập trước khi thực hiện đăng xuất!');
+            return redirect()->route('login')->with('error', 'Bạn phải đăng nhập!');
         }
 
         return $next($request);

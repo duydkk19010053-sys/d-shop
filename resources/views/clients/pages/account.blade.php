@@ -2,7 +2,6 @@
 @section('title', 'Tài khoản')
 
 @section('content')
-      @include('clients.components.modals.wishlist-modal')
 
     <div class="page-title-overlap bg-dark pt-4">
         <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
@@ -36,7 +35,7 @@
                                     class="text-accent fs-sm">{{ $user->email }}</span>
                             </div>
                         </div><a class="btn btn-primary d-lg-none mb-2 mt-3 mt-md-0" href="#account-menu"
-                            data-bs-toggle="collapse" aria-expanded="false"><i class="ci-menu me-2"></i>Account menu</a>
+                            data-bs-toggle="collapse" aria-expanded="false"><i class="ci-menu me-2"></i>Tài khoản</a>
                     </div>
                     <div class="d-lg-block collapse" id="account-menu">
                         <ul class="nav nav-tabs flex-column" role="tablist">
@@ -55,17 +54,11 @@
                                     class="nav-link nav-link-style d-flex align-items-center px-4 py-3" href="#address"
                                     data-bs-toggle="tab" role="tab"><i class="ci-location opacity-60 me-2"></i>Địa chỉ</a>
                             </li>
-                            <li class="nav-item mb-0"><a class="nav-link nav-link-style d-flex align-items-center px-4 py-3"
-                                    href="#payment" data-bs-toggle="tab" role="tab"><i
-                                        class="ci-card opacity-60 me-2"></i>Phương thức thanh toán</a></li>
+                            
                             <li class="nav-item border-bottom mb-0"><a
                                     class="nav-link nav-link-style d-flex align-items-center px-4 py-3" href="#orders"
-                                    data-bs-toggle="tab" role="tab"><i class="ci-bag opacity-60 me-2"></i>Đơn hàng<span
-                                        class="fs-sm text-muted ms-auto">1</span></a></li>
-                            <li class="nav-item border-bottom mb-0"><a
-                                    class="nav-link nav-link-style d-flex align-items-center px-4 py-3" href="#wishlist"
-                                    data-bs-toggle="tab" role="tab"><i class="ci-heart opacity-60 me-2"></i>Danh sách yêu
-                                    thích<span class="fs-sm text-muted ms-auto">3</span></a></li>
+                                    data-bs-toggle="tab" role="tab"><i class="ci-basket opacity-60 me-2"></i>Đơn hàng của bạn</a>
+                            </li>
                             <li class=" border-top mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3"
                                     href="{{ route('logout') }}"><i class="ci-sign-out opacity-60 me-2"></i>Đăng xuất</a>
                             </li>
@@ -141,7 +134,7 @@
                             </form>
                         </section>
                     </div>
-
+                    
                     <div class="tab-pane fade show active" id="password" role="tabpanel">
                         <section>
                             <div
@@ -196,68 +189,6 @@
                             </form>
                         </section>
                     </div>
-
-                    <div class="tab-pane fade" id="orders" role="tabpanel">
-                        <section>
-                            <div class="d-flex justify-content-between align-items-center pt-lg-2 pb-4 pb-lg-5 mb-lg-3">
-                                <div class="d-flex align-items-center">
-                                    <label class="d-none d-lg-block fs-sm text-light text-nowrap opacity-75 me-2"
-                                        for="order-sort"></label>
-                                    <label class="d-lg-none fs-sm text-nowrap opacity-75 me-2" for="order-sort"></label>
-
-                                </div>
-                            </div>
-                            <div class="table-responsive fs-md mb-4">
-                                <table class="table table-hover mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã đơn hàng #</th>
-                                            <th>Ngày mua</th>
-                                            <th>Trạng thái</th>
-                                            <th>Tổng cộng</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="py-3"><a class="nav-link-style fw-medium fs-sm" href="#order-details"
-                                                    data-bs-toggle="modal">34VB5540K83</a></td>
-                                            <td class="py-3">May 21, 2019</td>
-                                            <td class="py-3"><span class="badge bg-info m-0">In Progress</span></td>
-                                            <td class="py-3">$358.75</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="tab-pane fade" id="wishlist" role="tabpanel">
-                        <section>
-                            <div
-                                class="d-none d-lg-flex justify-content-between align-items-center pt-lg-3 pb-4 pb-lg-5 mb-lg-3">
-                            </div>
-                            <div class="d-sm-flex justify-content-between mt-lg-4 mb-4 pb-3 pb-sm-2 border-bottom">
-                                <div class="d-block d-sm-flex align-items-start text-center text-sm-start"><a
-                                        class="d-block flex-shrink-0 mx-auto me-sm-4" href="shop-single-v1.html"
-                                        style="width: 10rem;"><img src="img/shop/cart/02.jpg" alt="Product"></a>
-                                    <div class="pt-2">
-                                        <h3 class="product-title fs-base mb-2"><a href="shop-single-v1.html">TH Jeans City
-                                                Backpack</a></h3>
-                                        <div class="fs-sm"><span class="text-muted me-2">Brand:</span>Tommy Hilfiger</div>
-                                        <div class="fs-sm"><span class="text-muted me-2">Color:</span>Khaki</div>
-                                        <div class="fs-lg text-accent pt-2">$79.<small>50</small></div>
-                                    </div>
-                                </div>
-                                <div class="pt-2 ps-sm-3 mx-auto mx-sm-0 text-center">
-                                    <button class="btn btn-outline-danger btn-sm" type="button"><i
-                                            class="ci-trash me-2"></i>Xóa</button>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-
-
                     <div class="tab-pane fade" id="address" role="tabpanel">
                         <section>
                             <div
@@ -347,52 +278,46 @@
                             </div>
                         </div>
                     </form>
-
-
-
-                    <div class="tab-pane fade" id="payment" role="tabpanel">
-                        <section>
-                            <div
-                                class="d-none d-lg-flex justify-content-between align-items-center pt-lg-3 pb-4 pb-lg-5 mb-lg-3">
-                            </div>
-                            <div class="table-responsive fs-md mb-4">
-                                <table class="table table-hover mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>Thẻ tín dụng / thẻ ghi nợ của bạn</th>
-                                            <th>Tên trên thẻ</th>
-                                            <th>Hết hạn vào</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="py-3 align-middle">
-                                                <div class="d-flex align-items-center"><img src="img/card-visa.png"
-                                                        width="39" alt="Visa">
-                                                    <div class="ps-2"><span
-                                                            class="fw-medium text-heading me-1">Visa</span>ending in
-                                                        4999<span class="align-middle badge bg-info ms-2">Primary</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 align-middle">Susan Gardner</td>
-                                            <td class="py-3 align-middle">08 / 2019</td>
-                                            <td class="py-3 align-middle"><a class="nav-link-style me-2" href="#"
-                                                    data-bs-toggle="tooltip" title="Edit"><i class="ci-edit"></i></a><a
-                                                    class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip"
-                                                    title="Remove">
-                                                    <div class="ci-trash"></div>
-                                                </a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="text-sm-end"><a class="btn btn-primary" href="#add-payment"
-                                    data-bs-toggle="modal">Thêm phương thức thanh toán</a></div>
-                        </section>
+                    <!-- Orders list-->
+                    <div class="tab-pane fade" id="orders" role="tabpanel" style="padding-top: 100px;">
+                        <div class="table-responsive fs-md mb-4">
+                          <table class="table table-hover mb-0">
+                            <thead>
+                              <tr>
+                                <th>Đơn hàng</th>
+                                <th>Ngày mua</th>
+                                <th>Trạng thái</th>
+                                <th>Tổng cộng</th>
+                                <th>Hành động</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              @foreach ($orders as $order)
+                                <tr>
+                                <td class="py-3">#{{ $order->id }}</td>
+                                <td class="py-3">{{ $order->created_at->format('d/m/Y') }}</td>
+                                <td class="py-3">
+                                    @if ($order->status == 'pending')
+                                        <span class="badge bg-warning">Chờ xác nhận</span>
+                                    @elseif ($order->status == 'processing')
+                                        <span class="badge bg-info">Đang xử lý</span>
+                                    @elseif ($order->status == 'completed')
+                                        <span class="badge bg-success">Hoàn thành</span>
+                                    @elseif ($order->status == 'canceled')
+                                        <span class="badge bg-danger">Đã hủy</span>
+                                    @endif
+                                </span></td>
+                                <td class="py-3">{{ number_format($order->total_price, 0, ',', '.') }}₫</td>
+                                <td class="py-3">
+                                    <a class="btn btn-sm btn-info" href="{{ route('order.show', $order->id) }}">Chi tiết</a>
+                                </td>
+                              </tr>
+                              @endforeach
+                              
+                            </tbody>
+                          </table>
+                        </div>
                     </div>
-
                 </div>
             </section>
         </div>
