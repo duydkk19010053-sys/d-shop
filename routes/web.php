@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Clients\CheckoutController;
 use App\Http\Controllers\Clients\AccountController;
 use App\Http\Controllers\Clients\AuthController;
 use App\Http\Controllers\Clients\ForgotPasswordController;
@@ -10,7 +10,7 @@ use App\Http\Controllers\Clients\ReviewController;
 use App\Http\Controllers\Clients\SupportController;
 use App\Http\Controllers\Clients\HomeController;
 use App\Http\Controllers\Clients\ProductController;
-use App\Http\Controllers\CartController;
+use App\Http\Controllers\Clients\CartController;
 use App\Http\Controllers\Clients\ContactController;
 use App\Http\Controllers\Clients\SearchController;
 use App\Models\Order;
@@ -100,3 +100,5 @@ Route::post('/contact', [ContactController::class, 'sendContact'])->name('contac
 
 // Search
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+
+require __DIR__.'/admin.php';
