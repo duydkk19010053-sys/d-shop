@@ -18,11 +18,11 @@ class RedirectIfNoAuthenticated
     public function handle(Request $request, Closure $next)
     {
         if($request->is('admin') || $request->is('admin/*')){
-            if(Auth::guard('admin')->check()){
-                with('error', 'Vui lòng đăng nhập để vào trang quản trị');
+            if(!Auth::guard('admin')->check()){
+               return redirect()->route('admin.login')->with('error', 'Vui lòng đăng nhập để để vào trang quản trị');
             }
         }else{
-            if(Auth::guard('web')->check()){
+            if(!Auth::guard('web')->check()){
                 return redirect()->route('login')->with('error', 'Vui lòng đăng nhập để sử dụng chức năng này');
             }
         }
